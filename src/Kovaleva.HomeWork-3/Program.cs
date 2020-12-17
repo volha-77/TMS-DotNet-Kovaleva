@@ -23,37 +23,15 @@ namespace Kovaleva.HomeWork_3
             DateTime start;
             DateTime end;
 
-
-
-
             while (!InputDatePeriod(out start, out end)) ;
+            string day = GetDay();
 
+            var list = GetDaysOfUserInput(start, end, day);
 
-            var dayOfWeek = Console.ReadLine();
-            //var dayOfWeek = Console.ReadLine();
-            //DateTime[] Array = { };
-
-            //var listOfDays = new List<DateTime>();
-            //var FilterDays = new List<DateTime>();
-
-            //while (end >= start)
-            //{ 
-            //    if (start.DayOfWeek.ToString() == dayOfWeek)
-            //        FilterDays.Add(start);
-            //    start.AddDays(1);
-            // }
-
-            ////do
-            ////{ }
-            ////while ();
-
-            ////for (int i = 0;; i++)
-            ////{
-            ////    if (end == start)
-            ////    { start.AddDays(1); }
-            ////}
-            ///
-            var list = GetDaysOfUserInput(start, end, dayOfWeek);
+            foreach (var date in list)
+            {
+                Console.WriteLine(date.ToShortDateString() + " -- " + date.DayOfWeek.ToString());
+            }
             Console.ReadLine();
         }
 
@@ -71,7 +49,7 @@ namespace Kovaleva.HomeWork_3
             while (InputDate(out start, nameof(start)) != true) ;
             while (InputDate(out end, nameof(end)) != true) ;
 
-            bool result = (start > end) ? true : false;
+            bool result = (start <= end) ? true : false;
             if (!result) Console.WriteLine("Error! Start date is greater than end date. Try again!");
             return result;
 
@@ -113,21 +91,13 @@ namespace Kovaleva.HomeWork_3
         static List<DateTime> GetDaysOfUserInput(DateTime start, DateTime end, string dayOfWeek)
         {
 
-            DateTime[] Array = { };
-
-
             var FilterDays = new List<DateTime>();
 
             while (end >= start)
             {
-                if (start.DayOfWeek.ToString() == dayOfWeek)
+                if (start.DayOfWeek.ToString().ToUpper() == dayOfWeek)
                     FilterDays.Add(start);
-                start.AddDays(1);
-            }
-
-            foreach (var day in FilterDays)
-            {
-
+                start = start.AddDays(1);
             }
 
             return FilterDays;
