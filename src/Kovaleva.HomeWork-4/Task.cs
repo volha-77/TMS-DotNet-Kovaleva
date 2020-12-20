@@ -87,7 +87,18 @@ namespace Kovaleva.HomeWork_4
                     EndDate = value;
                     break;
                 case "status":
-                    
+                    bool result = false;
+                    for (int i = 1; i <= Enum.GetNames(typeof(TaskStatus)).Length; i++)
+                    {
+                        var status = (TaskStatus)i;
+                        if (status.ToString().ToUpper() == value.ToUpper().Trim())
+                        {
+                            _status = status;
+                            result = true;
+                            break;
+                        }
+                    }
+                    if (!result) _status = TaskStatus.Unknown;
                     break;
             }
         }
