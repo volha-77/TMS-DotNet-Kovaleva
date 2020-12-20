@@ -5,8 +5,9 @@ namespace Kovaleva.HomeWork_4
     public class Task
     {
         private readonly string Id;
-        private DateTime startDate;
-        private DateTime endDate;
+        private DateTime _startDate;
+        private DateTime _endDate;
+        private TaskStatus _status;
         private string GetId()
         { return Guid.NewGuid().ToString().ToUpper().Substring(0, 5); }
 
@@ -31,20 +32,20 @@ namespace Kovaleva.HomeWork_4
 
         public string StartDate
         {
-            get { return startDate.ToShortDateString(); }
-            set => startDate = ConvertDateFromString(value);
+            get { return _startDate.ToShortDateString(); }
+            set => _startDate = ConvertDateFromString(value);
         }
 
         public string EndDate
         {
-            get { return endDate.ToShortDateString(); }
-            set => endDate = ConvertDateFromString(value);
+            get { return _endDate.ToShortDateString(); }
+            set => _endDate = ConvertDateFromString(value);
         }
 
         public Task()
         {
             Id = GetId();
-
+            _status = TaskStatus.ToDo;
         }
 
         public Task(string name, string description, string startDate, string endDate)
@@ -55,14 +56,16 @@ namespace Kovaleva.HomeWork_4
 
             StartDate = startDate;
             EndDate = endDate;
+            _status = TaskStatus.ToDo;
         }
 
         public void PrintInfo()
         {
-            Console.WriteLine(Id);
-            Console.WriteLine(Name);
-            Console.WriteLine(Description);
-            Console.WriteLine($"{startDate.ToShortDateString()} -> {endDate.ToShortDateString()}");
+            Console.WriteLine($"Id: {Id}");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Dates: {_startDate.ToShortDateString()} -> {_endDate.ToShortDateString()}");
+            Console.WriteLine($"status: {_status}");
 
         }
 
@@ -77,11 +80,14 @@ namespace Kovaleva.HomeWork_4
                 case "description":
                     Description = value;
                     break;
-                case "startDate":
+                case "startdate":
                       StartDate = value;
                     break;
-                case "endDate":
+                case "enddate":
                     EndDate = value;
+                    break;
+                case "status":
+                    
                     break;
             }
         }
