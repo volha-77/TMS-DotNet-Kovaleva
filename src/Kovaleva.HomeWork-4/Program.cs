@@ -16,22 +16,7 @@ namespace Kovaleva.HomeWork_4
             bool toInput = true; 
             do
             {
-                Console.WriteLine("Input name of the Task:");
-                string name = Console.ReadLine();
-
-                Console.WriteLine("Input description of the Task:");
-                string description = Console.ReadLine();
-
-                Console.WriteLine("Input start date of the Task:");
-                string startDate = Console.ReadLine();
-
-                Console.WriteLine("Input end date of the Task:");
-                string endDate = Console.ReadLine();
-
-                Task myTask = new Task(name, description, startDate, endDate);
-
-                Console.WriteLine("Input status of the Task (InProcess, ToDo, IsDone):");
-                myTask.ChangeProperty("status", Console.ReadLine());
+                AddTask(TaskList);
 
                 Console.WriteLine("If you want to continue input Task, press Y, else press N");
                 toInput = Console.ReadLine() == "Y" ? true : false;
@@ -39,6 +24,29 @@ namespace Kovaleva.HomeWork_4
            
            
             return TaskList;
+        }
+
+        private static void AddTask(List<Task> TaskList)
+        {
+            Console.WriteLine("Now create the Task.");
+            Console.WriteLine("Input name of the Task:");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Input description of the Task:");
+            string description = Console.ReadLine();
+
+            Console.WriteLine("Input start date of the Task:");
+            string startDate = Console.ReadLine();
+
+            Console.WriteLine("Input end date of the Task:");
+            string endDate = Console.ReadLine();
+
+            Task myTask = new Task(name, description, startDate, endDate);
+
+            Console.WriteLine("Input status of the Task (InProcess, ToDo, IsDone):");
+            myTask.ChangeProperty("status", Console.ReadLine());
+
+            TaskList.Add(myTask);
         }
     }
 
