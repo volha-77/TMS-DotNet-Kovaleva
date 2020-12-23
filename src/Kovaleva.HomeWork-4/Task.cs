@@ -57,6 +57,12 @@ namespace Kovaleva.HomeWork_4
             StartDate = startDate;
             EndDate = endDate;
             _status = TaskStatus.ToDo;
+
+            if (_startDate > _endDate)
+            {
+                throw new Exception("Error! You've input the start date greater than the end date!");
+            }
+
         }
 
         public void PrintInfo()
@@ -69,8 +75,9 @@ namespace Kovaleva.HomeWork_4
 
         }
 
-        public void ChangeProperty(string property, string value)
+        public bool ChangeProperty(string property, string value)
         {
+            bool result = true;
             property = property.ToLower();
             switch (property)
             {
@@ -81,15 +88,16 @@ namespace Kovaleva.HomeWork_4
                     Description = value;
                     break;
                 case "startdate":
-                      StartDate = value;
+                    StartDate = value;
                     break;
                 case "enddate":
                     EndDate = value;
                     break;
                 case "status":
-                    bool result = false;
+                    
                     for (int i = 1; i <= Enum.GetNames(typeof(TaskStatus)).Length; i++)
                     {
+                        result = false;
                         var status = (TaskStatus)i;
                         if (status.ToString().ToUpper() == value.ToUpper().Trim())
                         {
@@ -98,9 +106,15 @@ namespace Kovaleva.HomeWork_4
                             break;
                         }
                     }
-                    if (!result) _status = TaskStatus.Unknown;
+                    if (!result)
+                    {
+                        Console.WriteLine("You input wrong status!");
+                      _status = TaskStatus.Unknown;
+                    }
+
                     break;
             }
+            return result;
         }
 
     }
