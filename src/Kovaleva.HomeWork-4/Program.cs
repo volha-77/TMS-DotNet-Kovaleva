@@ -8,12 +8,17 @@ namespace Kovaleva.HomeWork_4
         static void Main(string[] args)
         {
             var TaskList = InitTaskList();
+
+            foreach (var myTask in TaskList)
+            {
+                myTask.PrintInfo();
+            }
         }
 
         private static List<Task> InitTaskList()
         {
             var TaskList = new List<Task>();
-            bool toInput = true; 
+            bool toInput = true;
             do
             {
                 AddTask(TaskList);
@@ -21,8 +26,8 @@ namespace Kovaleva.HomeWork_4
                 Console.WriteLine("If you want to continue input Task, press Y, else press N");
                 toInput = Console.ReadLine().ToUpper() == "Y" ? true : false;
             } while (toInput);
-           
-           
+
+
             return TaskList;
         }
 
@@ -40,15 +45,27 @@ namespace Kovaleva.HomeWork_4
 
             Console.WriteLine("Input end date of the Task:");
             string endDate = Console.ReadLine();
+            Task myTask = null;
+            
+            try
+            {
+                myTask = new Task(name, description, startDate, endDate);
+            }
+            catch (Exception)
+            {
 
-            Task myTask = new Task(name, description, startDate, endDate);
+               
+                
+            }
 
-            Console.WriteLine("Input status of the Task (InProcess, ToDo, IsDone):");
-            myTask.ChangeProperty("status", Console.ReadLine());
-
-            TaskList.Add(myTask);
+            if (myTask != null)
+            {
+                Console.WriteLine("Input status of the Task (InProcess, ToDo, IsDone):");
+                myTask.ChangeProperty("status", Console.ReadLine());
+                TaskList.Add(myTask);
+            }
         }
     }
 
-  
+
 }
