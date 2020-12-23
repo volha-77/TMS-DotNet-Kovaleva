@@ -11,7 +11,7 @@ namespace Kovaleva.HomeWork_4
         private string GetId()
         { return Guid.NewGuid().ToString().ToUpper().Substring(0, 5); }
 
-        private DateTime ConvertDateFromString(string value)
+        private DateTime ConvertDateFromString(string value, string nameOfProp)
         {
             DateTime result;
             try
@@ -21,8 +21,7 @@ namespace Kovaleva.HomeWork_4
             catch (Exception)
             {
                 result = DateTime.Now;
-                Console.WriteLine("Error! You've set wrong date. Date will be set on Now.");
-                // throw;
+                Console.WriteLine($"Error! You've set wrong {nameof(nameOfProp)} date. Date will be set on Now.");
             }
             return result;
         }
@@ -33,13 +32,16 @@ namespace Kovaleva.HomeWork_4
         public string StartDate
         {
             get { return _startDate.ToShortDateString(); }
-            set => _startDate = ConvertDateFromString(value);
+            set => _startDate = ConvertDateFromString(value, "start");
         }
 
         public string EndDate
         {
             get { return _endDate.ToShortDateString(); }
-            set => _endDate = ConvertDateFromString(value);
+            set
+            {
+                _endDate = ConvertDateFromString(value, "end");
+            }
         }
 
         public Task()

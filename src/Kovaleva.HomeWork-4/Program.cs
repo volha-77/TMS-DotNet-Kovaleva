@@ -7,7 +7,7 @@ namespace Kovaleva.HomeWork_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var TaskList = InitTaskList();
         }
 
         private static List<Task> InitTaskList()
@@ -19,7 +19,7 @@ namespace Kovaleva.HomeWork_4
                 AddTask(TaskList);
 
                 Console.WriteLine("If you want to continue input Task, press Y, else press N");
-                toInput = Console.ReadLine() == "Y" ? true : false;
+                toInput = Console.ReadLine().ToUpper() == "Y" ? true : false;
             } while (toInput);
            
            
