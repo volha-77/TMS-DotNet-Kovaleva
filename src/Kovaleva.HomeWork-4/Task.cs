@@ -21,7 +21,7 @@ namespace Kovaleva.HomeWork_4
             catch (Exception)
             {
                 result = DateTime.Now;
-                Console.WriteLine($"Error! You've set wrong {nameof(nameOfProp)} date. Date will be set on Now.");
+                Console.WriteLine($"Error! You've set wrong {nameOfProp} date. Date will be set on Now.");
             }
             return result;
         }
@@ -62,7 +62,8 @@ namespace Kovaleva.HomeWork_4
 
             if (_startDate > _endDate)
             {
-                throw new Exception("Error! You've input the start date greater than the end date!");
+                Console.WriteLine("Error on create class instance! You've input the start date greater than the end date!");
+                throw new Exception();
             }
 
         }
@@ -110,7 +111,7 @@ namespace Kovaleva.HomeWork_4
                     }
                     if (!result)
                     {
-                        Console.WriteLine("You input wrong status!");
+                        Console.WriteLine("Wrong status! Status will be set as 'Unknown'");
                       _status = TaskStatus.Unknown;
                     }
 

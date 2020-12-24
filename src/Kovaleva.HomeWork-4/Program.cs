@@ -13,6 +13,33 @@ namespace Kovaleva.HomeWork_4
             {
                 myTask.PrintInfo();
             }
+
+            bool toInput = true;
+            do
+            {
+                Console.WriteLine("Choose operation:");
+                Console.WriteLine("Add task press \"A\"");
+                Console.WriteLine("Delete task press \"D\"");
+                Console.WriteLine("Edit task press \"E\"");
+                Console.WriteLine("Quit \"Q\"");
+
+                string inputResult = Console.ReadLine().ToUpper();
+                switch (inputResult)
+                {
+                    case "A":
+                        AddTask(TaskList);
+                        break;
+                    case "D":
+                        break;
+                    case "E":
+                        break;
+
+                    default:
+                        toInput = false;
+                        break;
+                }
+            }
+            while (toInput);
         }
 
         private static List<Task> InitTaskList()
@@ -46,7 +73,7 @@ namespace Kovaleva.HomeWork_4
             Console.WriteLine("Input end date of the Task:");
             string endDate = Console.ReadLine();
             Task myTask = null;
-            
+
             try
             {
                 myTask = new Task(name, description, startDate, endDate);
@@ -54,8 +81,6 @@ namespace Kovaleva.HomeWork_4
             catch (Exception)
             {
 
-               
-                
             }
 
             if (myTask != null)
@@ -65,7 +90,18 @@ namespace Kovaleva.HomeWork_4
                 TaskList.Add(myTask);
             }
         }
-    }
 
+        private static void EditTask(List<Task> TaskList)
+        {
+           Console.WriteLine("Input Task ID:");
+            string taskId = Console.ReadLine();
+
+            foreach (var myTask in TaskList)
+            {
+                myTask.PrintInfo();
+            }
+
+        }
+    }
 
 }
