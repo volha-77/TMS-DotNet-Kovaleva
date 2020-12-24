@@ -9,20 +9,20 @@ namespace Kovaleva.HomeWork_4
         {
             var TaskList = InitTaskList();
 
-            foreach (var myTask in TaskList)
-            {
-                myTask.PrintInfo();
-            }
-
+            PrintTaskList(TaskList);
+           
+            Console.WriteLine("");
             bool toInput = true;
             do
             {
                 Console.WriteLine("Choose operation:");
+                Console.WriteLine("=========");
                 Console.WriteLine("Add task press \"A\"");
                 Console.WriteLine("Delete task press \"D\"");
                 Console.WriteLine("Edit task press \"E\"");
                 Console.WriteLine("Quit \"Q\"");
 
+                Console.WriteLine();
                 string inputResult = Console.ReadLine().ToUpper();
                 switch (inputResult)
                 {
@@ -30,8 +30,10 @@ namespace Kovaleva.HomeWork_4
                         AddTask(TaskList);
                         break;
                     case "D":
+                        DeleteTask(TaskList);
                         break;
                     case "E":
+                        EditTask(TaskList);
                         break;
 
                     default:
@@ -40,6 +42,9 @@ namespace Kovaleva.HomeWork_4
                 }
             }
             while (toInput);
+
+            Console.WriteLine();
+            PrintTaskList(TaskList);
         }
 
         private static List<Task> InitTaskList()
@@ -107,6 +112,33 @@ namespace Kovaleva.HomeWork_4
                 }
             }
 
+        }
+
+        private static void DeleteTask(List<Task> TaskList)
+        {
+            Console.WriteLine("Input Task ID:");
+            string taskId = Console.ReadLine().ToUpper().Trim();
+
+            foreach (var myTask in TaskList)
+            {
+                if (myTask.GetId().ToUpper() == taskId)
+
+                {
+                    TaskList.Remove(myTask);
+                }
+            }
+
+        }
+
+        private static void PrintTaskList(List<Task> TaskList)
+        {
+            Console.WriteLine("=========");
+            Console.WriteLine("Task list");
+            Console.WriteLine("=========");
+            foreach (var myTask in TaskList)
+            {
+                myTask.PrintInfo();
+            }
         }
     }
 
