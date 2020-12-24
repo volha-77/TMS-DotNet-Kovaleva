@@ -93,12 +93,18 @@ namespace Kovaleva.HomeWork_4
 
         private static void EditTask(List<Task> TaskList)
         {
-           Console.WriteLine("Input Task ID:");
-            string taskId = Console.ReadLine();
+            Console.WriteLine("Input Task ID:");
+            string taskId = Console.ReadLine().ToUpper().Trim();
 
             foreach (var myTask in TaskList)
             {
-                myTask.PrintInfo();
+                if (myTask.GetId().ToUpper() == taskId)
+
+                {
+                    string propName = Console.ReadLine();
+                    string value = Console.ReadLine();
+                    myTask.ChangeProperty(propName, value);
+                }
             }
 
         }

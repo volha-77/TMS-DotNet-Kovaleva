@@ -8,8 +8,11 @@ namespace Kovaleva.HomeWork_4
         private DateTime _startDate;
         private DateTime _endDate;
         private TaskStatus _status;
-        private string GetId()
+        private string SetId()
         { return Guid.NewGuid().ToString().ToUpper().Substring(0, 5); }
+
+        internal string GetId()
+        { return Id; }
 
         private DateTime ConvertDateFromString(string value, string nameOfProp)
         {
@@ -46,13 +49,13 @@ namespace Kovaleva.HomeWork_4
 
         public Task()
         {
-            Id = GetId();
+            Id = SetId();
             _status = TaskStatus.ToDo;
         }
 
         public Task(string name, string description, string startDate, string endDate)
         {
-            Id = GetId();
+            Id = SetId();
             Name = name;
             Description = description;
 
@@ -116,6 +119,10 @@ namespace Kovaleva.HomeWork_4
                     }
 
                     break;
+                default:
+                    Console.WriteLine("Wrong property name!");
+                    break;
+
             }
             return result;
         }
