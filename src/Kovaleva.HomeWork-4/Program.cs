@@ -106,7 +106,9 @@ namespace Kovaleva.HomeWork_4
                 if (myTask.GetId().ToUpper() == taskId)
 
                 {
+                    Console.WriteLine("Input property name:");
                     string propName = Console.ReadLine();
+                    Console.WriteLine("Input property value:");
                     string value = Console.ReadLine();
                     myTask.ChangeProperty(propName, value);
                 }
