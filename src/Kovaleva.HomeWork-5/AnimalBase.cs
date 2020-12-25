@@ -2,13 +2,15 @@
 
 namespace Kovaleva.HomeWork_5
 {
-    abstract class AnimalBase
+    public abstract class AnimalBase
     {
-        public string name { get; set; }
-        public double weight { get; set; }
-        public double age { get; set; }
+        public string name;
 
-        public int pawsNumber { get; set; }
+        public double Name { get; set; }
+        public double Weight { get; set; }
+        public double Age { get; set; }
+
+        public int PawsNumber { get; set; }
 
         public void Speak()
         {

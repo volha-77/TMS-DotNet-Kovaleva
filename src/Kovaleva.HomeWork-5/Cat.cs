@@ -6,5 +6,6 @@ namespace Kovaleva.HomeWork_5
 {
     public class Cat: AnimalBase
     {
+        public string nickname;
     }
 }
