@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Kovaleva.HomeWork_5
+﻿namespace Kovaleva.HomeWork_5
 {
-    public class Cat: AnimalBase
+    public class Cat : AnimalBase
     {
-        public string Name { get; set; }
-        public string nickname;
+        /// <summary>
+        /// кличка кота
+        /// </summary>
+        public string nickname { get; set; }
+        /// <summary>
+        /// статический конструктор
+        /// </summary>
+        static Cat()
+        { name = "Cat"; }
     }
 }
