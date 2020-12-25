@@ -4,9 +4,9 @@ namespace Kovaleva.HomeWork_5
 {
     public abstract class AnimalBase
     {
-        public string name;
+        public static string name;
 
-        public double Name { get; set; }
+       //public double Name { get; set; }
         public double Weight { get; set; }
         public double Age { get; set; }
 
