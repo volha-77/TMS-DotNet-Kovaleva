@@ -7,7 +7,7 @@ namespace Kovaleva.HomeWork_5
         /// <summary>
         /// название животного
         /// </summary>
-        public static string name;
+        public static string Name;
         /// <summary>
         /// вес
         /// </summary>
@@ -26,7 +26,7 @@ namespace Kovaleva.HomeWork_5
         /// </summary>
         public void Speak()
         {
-            Console.WriteLine($"I am {name}");
+            Console.WriteLine($"I am {Name}");
         }
         /// <summary>
         /// Метод Есть с параметром Еда

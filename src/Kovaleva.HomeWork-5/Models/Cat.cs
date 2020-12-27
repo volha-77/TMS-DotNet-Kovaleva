@@ -5,11 +5,11 @@
         /// <summary>
         /// кличка кота
         /// </summary>
-        public string nickname { get; set; }
+        public string Nickname { get; set; }
         /// <summary>
         /// статический конструктор
         /// </summary>
         static Cat()
-        { name = "Cat"; }
+        { Name = "Cat"; }
     }
 }
