@@ -25,7 +25,7 @@ namespace Kovaleva.HomeWork_5
         /// <summary>
         /// метод Говорить
         /// </summary>
-        public void Speak()
+        public virtual void Speak()
         {
             Console.WriteLine($"I am {Name}");
         }

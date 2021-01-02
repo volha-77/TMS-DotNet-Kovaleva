@@ -16,6 +16,11 @@ namespace Kovaleva.HomeWork_5
         public Cat()
         { Name = "Cat"; }
 
+        public override void Speak()
+        {
+            Console.WriteLine($"Hello, I am {Name} {Nickname}");
+        }
+
         public override void Eat(object meal)
         {
            Console.WriteLine($"I am  Cat {Nickname}, i'm eating {meal}");

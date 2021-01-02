@@ -13,7 +13,14 @@ namespace Kovaleva.HomeWork_5.Models
 
             set { _volume = value; }
         }
-        public Cage(int number, AnimalBase animal)
+
+        public int Number
+        {
+            get { return _number; }
+
+            set { _number = value; }
+        }
+public Cage(int number, AnimalBase animal)
         {
             _number = number;
             Animal = animal;
