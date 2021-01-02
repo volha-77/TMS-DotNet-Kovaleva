@@ -11,10 +11,11 @@ namespace Kovaleva.HomeWork_5
         /// <summary>
         /// статический конструктор
         /// </summary>
-        //static Cat()
-        //{ Name = "Cat"; }
-        public Cat()
+        static Cat()
         { Name = "Cat"; }
+
+        //public Cat()
+        //{ Name = "Cat"; }
 
         public override void Speak()
         {

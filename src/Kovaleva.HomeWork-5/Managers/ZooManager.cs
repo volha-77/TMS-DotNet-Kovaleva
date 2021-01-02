@@ -26,15 +26,15 @@ namespace Kovaleva.HomeWork_5.Managers
             var cage = new Cage<AnimalBase>(number, animal);
             cage.Volume = volume;
             Cages.Add(cage);
-            Console.WriteLine($"{animal.Name} is put in cage #{cage.Number}");
+            Console.WriteLine($"{animal.AnimalName()} is put in cage #{cage.Number}");
         }
 
         public void FeedAnimal(int number)
         {
             var cage = Cages[number - 1];
             AnimalBase animal = cage.Animal;
-            Console.WriteLine($"Now we will feed the {animal.Name}");
-            switch (animal.Name)
+            Console.WriteLine($"Now we will feed the {animal.AnimalName()}");
+            switch (animal.AnimalName())
             {
                 case "Cat":
                     animal.Eat("meat");
