@@ -7,7 +7,7 @@ using System.Text;
 namespace Kovaleva.HomeWork_5.Interfaces
 {
     interface IZooKeeper
-    {public void PutInCage(AnimalBase animal)
+    {   public void PutInCage(AnimalBase animal, int volumeOfCage)
         {}
         /// <summary>
         ///Покормить кого-то

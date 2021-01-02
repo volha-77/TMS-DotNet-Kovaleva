@@ -1,4 +1,6 @@
-﻿namespace Kovaleva.HomeWork_5
+﻿using System;
+
+namespace Kovaleva.HomeWork_5
 {
     public class Cat : AnimalBase
     {
@@ -9,7 +11,15 @@
         /// <summary>
         /// статический конструктор
         /// </summary>
-        static Cat()
+        //static Cat()
+        //{ Name = "Cat"; }
+        public Cat()
         { Name = "Cat"; }
+
+        public override void Eat(object meal)
+        {
+           Console.WriteLine($"I am  Cat {Nickname}, i'm eating {meal}");
+        }
+
     }
 }

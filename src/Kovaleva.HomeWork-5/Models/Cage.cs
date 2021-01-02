@@ -7,7 +7,12 @@ namespace Kovaleva.HomeWork_5.Models
         private int _volume { get; set; }
         private int _number;
         public AnimalBase Animal { get; set; }
+        public int Volume
+        {
+            get{ return _volume; }
 
+            set { _volume = value; }
+        }
         public Cage(int number, AnimalBase animal)
         {
             _number = number;

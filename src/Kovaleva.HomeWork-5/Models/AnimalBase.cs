@@ -7,7 +7,8 @@ namespace Kovaleva.HomeWork_5
         /// <summary>
         /// название животного
         /// </summary>
-        public static string Name;
+        //public static string Name;
+        public string Name;
         /// <summary>
         /// вес
         /// </summary>
@@ -32,7 +33,7 @@ namespace Kovaleva.HomeWork_5
         /// Метод Есть с параметром Еда
         /// </summary>
         /// <param name="meal"></param>
-        public void Eat(object meal)
+        public virtual void Eat(object meal)
         {
             Console.WriteLine($"I eat {meal}");
         }
