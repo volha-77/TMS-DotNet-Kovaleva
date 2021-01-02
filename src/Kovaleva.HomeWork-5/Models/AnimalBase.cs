@@ -8,7 +8,7 @@ namespace Kovaleva.HomeWork_5
         /// название животного
         /// </summary>
         //public static string Name;
-        public string Name;
+          public string Name;
         /// <summary>
         /// вес
         /// </summary>
