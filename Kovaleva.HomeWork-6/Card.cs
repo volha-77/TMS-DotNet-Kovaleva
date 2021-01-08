@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kovaleva.HomeWork_6
 {
-    internal class Card
+    public class Card
     {
         public int CardNumber { get; set; }
         public int Pin { get; set; }
