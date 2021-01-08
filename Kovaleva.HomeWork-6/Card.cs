@@ -6,12 +6,12 @@ namespace Kovaleva.HomeWork_6
 {
     public class Card
     {
-        public int CardNumber { get; set; }
+        public long CardNumber { get; set; }
         public int Pin { get; set; }
         public decimal Balance { get; set; }
         public string OwnerName { get; set; }
 
-        public Card(int cardNumber, int pin, string ownerName, decimal balance = 0)
+        public Card(long cardNumber, int pin, string ownerName, decimal balance = 0)
         {
             CardNumber = cardNumber;
             Pin = pin;
@@ -19,7 +19,7 @@ namespace Kovaleva.HomeWork_6
             Balance = balance;
         }
 
-        public Card(int cardNumber, int pin)
+        public Card(long cardNumber, int pin)
         {
             CardNumber = cardNumber;
             Pin = pin;
