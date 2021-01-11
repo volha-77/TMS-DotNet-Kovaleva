@@ -8,7 +8,8 @@ namespace Kovaleva.HomeWork_5.Managers
 {
     class ZooManager : IZooKeeper, ICages
     {
-        public List<Cage<AnimalBase>> Cages { get; set; } = new List<Cage<AnimalBase>>();
+        //public List<Cage<AnimalBase>> Cages { get; set; } = new List<Cage<AnimalBase>>();
+        public List<Cage> Cages { get; set; } = new List<Cage>();
 
         public void PrintInfo()
         {
@@ -23,7 +24,8 @@ namespace Kovaleva.HomeWork_5.Managers
         {
             int number = Cages.Count + 1;
             //?<AnimalBase>
-            var cage = new Cage<AnimalBase>(number, animal);
+            //var cage = new Cage<AnimalBase>(number, animal);
+            var cage = new Cage(number, animal);
             cage.Volume = volume;
             Cages.Add(cage);
             Console.WriteLine($"{animal.AnimalName()} is put in cage #{cage.Number}");

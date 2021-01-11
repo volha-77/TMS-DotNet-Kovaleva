@@ -2,7 +2,7 @@
 
 namespace Kovaleva.HomeWork_5.Models
 {
-    public class Cage<AnimalBase>
+    public class Cage//<AnimalBase>
     {
         private int _volume { get; set; }
         private int _number;
@@ -33,6 +33,6 @@ public Cage(int number, AnimalBase animal)
         { }
 
         public void PrintCageInfo()
-        { Console.WriteLine($"#{_number}:{Animal}"); }
+        { Console.WriteLine($"#{_number}:{Animal.AnimalName()}"); }
     }
 }
