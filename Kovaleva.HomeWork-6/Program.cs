@@ -15,7 +15,7 @@ namespace Kovaleva.HomeWork_6
             atm.Notify += card1.PrintBalance;
            
             atm.CurrentCard = card1;
-            Console.WriteLine($"Введите pin карты {card1.CardNumber}") ;
+            Console.WriteLine($"Введите pin карты {card1.PrintCardNumber()}") ;
             int pin1 = int.Parse(Console.ReadLine());
             if (atm.CheckPin(pin1))
             {
@@ -28,7 +28,7 @@ namespace Kovaleva.HomeWork_6
             atm.Notify -= card1.PrintBalance;
             atm.Notify += card2.PrintBalance;
             atm.CurrentCard = card2;
-            Console.WriteLine($"Введите pin карты {card2.CardNumber}");
+            Console.WriteLine($"Введите pin карты {card2.PrintCardNumber()}");
             int pin2 = int.Parse(Console.ReadLine());
             if (atm.CheckPin(pin2))
             {
