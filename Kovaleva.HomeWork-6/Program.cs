@@ -12,6 +12,8 @@ namespace Kovaleva.HomeWork_6
 
             ATM atm = new ATM(new List<Card>() { card1, card2 });
 
+            atm.Notify += card1.PrintBalance;
+           
             atm.CurrentCard = card1;
             Console.WriteLine($"Введите pin карты {card1.CardNumber}") ;
             int pin1 = int.Parse(Console.ReadLine());
@@ -21,9 +23,10 @@ namespace Kovaleva.HomeWork_6
                 decimal sum = decimal.Parse(Console.ReadLine());
                 atm.operation = atm.AddSum;
                 atm.operation(sum);
-                atm.PrintBalance();
+                //atm.PrintBalance();
             }
-
+            atm.Notify -= card1.PrintBalance;
+            atm.Notify += card2.PrintBalance;
             atm.CurrentCard = card2;
             Console.WriteLine($"Введите pin карты {card2.CardNumber}");
             int pin2 = int.Parse(Console.ReadLine());
@@ -33,7 +36,7 @@ namespace Kovaleva.HomeWork_6
                 decimal sum = decimal.Parse(Console.ReadLine());
                 atm.operation = atm.WithdrawSum;
                 atm.operation(sum);
-                atm.PrintBalance();
+                //atm.PrintBalance();
             }
 
 

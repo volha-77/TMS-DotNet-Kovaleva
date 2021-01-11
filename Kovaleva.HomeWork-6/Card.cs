@@ -25,6 +25,9 @@ namespace Kovaleva.HomeWork_6
             Pin = pin;
         }
 
+        public void PrintBalance()
+        { Console.WriteLine($"Текущий баланс: {Balance}"); }
+
 
     }
 }
