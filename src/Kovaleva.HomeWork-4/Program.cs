@@ -7,9 +7,9 @@ namespace Kovaleva.HomeWork_4
     {
         static void Main(string[] args)
         {
-            var TaskList = InitTaskList();
+            var taskList = InitTaskList();
 
-            PrintTaskList(TaskList);
+            PrintTaskList(taskList);
            
             Console.WriteLine("");
             bool toInput = true;
@@ -27,13 +27,13 @@ namespace Kovaleva.HomeWork_4
                 switch (inputResult)
                 {
                     case "A":
-                        AddTask(TaskList);
+                        AddTask(taskList);
                         break;
                     case "D":
-                        DeleteTask(TaskList);
+                        DeleteTask(taskList);
                         break;
                     case "E":
-                        EditTask(TaskList);
+                        EditTask(taskList);
                         break;
 
                     default:
@@ -44,26 +44,26 @@ namespace Kovaleva.HomeWork_4
             while (toInput);
 
             Console.WriteLine();
-            PrintTaskList(TaskList);
+            PrintTaskList(taskList);
         }
 
         private static List<Task> InitTaskList()
         {
-            var TaskList = new List<Task>();
+            var taskList = new List<Task>();
             bool toInput = true;
             do
             {
-                AddTask(TaskList);
+                AddTask(taskList);
 
                 Console.WriteLine("If you want to continue input Task, press Y, else press N");
                 toInput = Console.ReadLine().ToUpper() == "Y" ? true : false;
             } while (toInput);
 
 
-            return TaskList;
+            return taskList;
         }
 
-        private static void AddTask(List<Task> TaskList)
+        private static void AddTask(List<Task> taskList)
         {
             Console.WriteLine("Now create the Task.");
             Console.WriteLine("Input name of the Task:");
@@ -92,16 +92,16 @@ namespace Kovaleva.HomeWork_4
             {
                 Console.WriteLine("Input status of the Task (InProcess, ToDo, IsDone):");
                 myTask.ChangeProperty("status", Console.ReadLine());
-                TaskList.Add(myTask);
+                taskList.Add(myTask);
             }
         }
 
-        private static void EditTask(List<Task> TaskList)
+        private static void EditTask(List<Task> taskList)
         {
             Console.WriteLine("Input Task ID:");
             string taskId = Console.ReadLine().ToUpper().Trim();
 
-            foreach (var myTask in TaskList)
+            foreach (var myTask in taskList)
             {
                 if (myTask.GetId().ToUpper() == taskId)
 
@@ -116,28 +116,28 @@ namespace Kovaleva.HomeWork_4
 
         }
 
-        private static void DeleteTask(List<Task> TaskList)
+        private static void DeleteTask(List<Task> taskList)
         {
             Console.WriteLine("Input Task ID:");
             string taskId = Console.ReadLine().ToUpper().Trim();
 
-            foreach (var myTask in TaskList)
+            foreach (var myTask in taskList)
             {
                 if (myTask.GetId().ToUpper() == taskId)
 
                 {
-                    TaskList.Remove(myTask);
+                    taskList.Remove(myTask);
                 }
             }
 
         }
 
-        private static void PrintTaskList(List<Task> TaskList)
+        private static void PrintTaskList(List<Task> taskList)
         {
             Console.WriteLine("=========");
             Console.WriteLine("Task list");
             Console.WriteLine("=========");
-            foreach (var myTask in TaskList)
+            foreach (var myTask in taskList)
             {
                 myTask.PrintInfo();
             }

@@ -4,7 +4,7 @@ namespace Kovaleva.HomeWork_4
 {
     public class Task
     {
-        private readonly string Id;
+        private readonly string id;
         private DateTime _startDate;
         private DateTime _endDate;
         private TaskStatus _status;
@@ -12,7 +12,7 @@ namespace Kovaleva.HomeWork_4
         { return Guid.NewGuid().ToString().ToUpper().Substring(0, 5); }
 
         internal string GetId()
-        { return Id; }
+        { return id; }
 
         private DateTime ConvertDateFromString(string value, string nameOfProp)
         {
@@ -49,13 +49,13 @@ namespace Kovaleva.HomeWork_4
 
         public Task()
         {
-            Id = SetId();
+            id = SetId();
             _status = TaskStatus.ToDo;
         }
 
-        public Task(string name, string description, string startDate, string endDate)
+        public Task(string name, string description, string startDate, string endDate):this()
         {
-            Id = SetId();
+            id = SetId();
             Name = name;
             Description = description;
 
@@ -73,7 +73,7 @@ namespace Kovaleva.HomeWork_4
 
         public void PrintInfo()
         {
-            Console.WriteLine($"Id: {Id}");
+            Console.WriteLine($"Id: {id}");
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Dates: {_startDate.ToShortDateString()} -> {_endDate.ToShortDateString()}");
@@ -83,6 +83,9 @@ namespace Kovaleva.HomeWork_4
 
         public bool ChangeProperty(string property, string value)
         {
+            if (property == null) { Console.WriteLine("Name of property can't be Null"); return false; }
+            if (property == null) { Console.WriteLine("Value of property can't be Null"); return false; }
+
             bool result = true;
             property = property.ToLower();
             switch (property)
