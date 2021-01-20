@@ -33,6 +33,8 @@ namespace Kovaleva.HomeWork_5.Managers
 
         public void FeedAnimal(int number)
         {
+            if (number <= 0) { Console.WriteLine("Wrong cage number!"); return; }
+            if (Cages.Count == 0) { Console.WriteLine("Еhere are no cages yet!"); return; }
             var cage = Cages[number - 1];
             AnimalBase animal = cage.Animal;
             Console.WriteLine($"Now we will feed the {animal.AnimalName()}");
