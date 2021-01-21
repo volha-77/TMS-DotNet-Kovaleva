@@ -4,15 +4,16 @@ namespace Kovaleva.HomeWork_4
 {
     public class Task
     {
-        private readonly string id;
+        //private string id;
+        public string Id { get; private set; }
         private DateTime _startDate;
         private DateTime _endDate;
         private TaskStatus _status;
-        private string SetId()
-        { return Guid.NewGuid().ToString().ToUpper().Substring(0, 5); }
+        //private string SetId()
+        //{ return Guid.NewGuid().ToString().ToUpper().Substring(0, 5); }
 
-        internal string GetId()
-        { return id; }
+        //internal string GetId()
+        //{ return id; }
 
         private DateTime ConvertDateFromString(string value, string nameOfProp)
         {
@@ -49,19 +50,19 @@ namespace Kovaleva.HomeWork_4
 
         public Task()
         {
-            id = SetId();
+            Id = Guid.NewGuid().ToString().ToUpper().Substring(0, 5);
             _status = TaskStatus.ToDo;
         }
 
         public Task(string name, string description, string startDate, string endDate):this()
         {
-            id = SetId();
+            //id = SetId();
             Name = name;
             Description = description;
 
             StartDate = startDate;
             EndDate = endDate;
-            _status = TaskStatus.ToDo;
+           // _status = TaskStatus.ToDo;
 
             if (_startDate > _endDate)
             {
@@ -73,7 +74,7 @@ namespace Kovaleva.HomeWork_4
 
         public void PrintInfo()
         {
-            Console.WriteLine($"Id: {id}");
+            Console.WriteLine($"Id: {Id}");
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Description: {Description}");
             Console.WriteLine($"Dates: {_startDate.ToShortDateString()} -> {_endDate.ToShortDateString()}");

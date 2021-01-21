@@ -103,7 +103,7 @@ namespace Kovaleva.HomeWork_4
 
             foreach (var myTask in taskList)
             {
-                if (myTask.GetId().ToUpper() == taskId)
+                if (myTask.Id.ToUpper() == taskId)
 
                 {
                     Console.WriteLine("Input property name:");
@@ -123,7 +123,7 @@ namespace Kovaleva.HomeWork_4
 
             foreach (var myTask in taskList)
             {
-                if (myTask.GetId().ToUpper() == taskId)
+                if (myTask.Id.ToUpper() == taskId)
 
                 {
                     taskList.Remove(myTask);
