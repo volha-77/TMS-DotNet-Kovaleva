@@ -3,8 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovaleva.HomeWork-4", "src\Kovaleva.HomeWork-4\Kovaleva.HomeWork-4.csproj", "{26D58A56-71D4-4D4A-AE3E-6DADCC97C281}"
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovaleva.HomeWork-2", "src\Kovaleva.HomeWork-2\Kovaleva.HomeWork-2.csproj", "{8EBCCE47-AAA8-4CCE-8A03-5379070E7A68}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovaleva.HomeWork-3", "src\Kovaleva.HomeWork-3\Kovaleva.HomeWork-3.csproj", "{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,6 +16,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+
+		{26D58A56-71D4-4D4A-AE3E-6DADCC97C281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D58A56-71D4-4D4A-AE3E-6DADCC97C281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D58A56-71D4-4D4A-AE3E-6DADCC97C281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D58A56-71D4-4D4A-AE3E-6DADCC97C281}.Release|Any CPU.Build.0 = Release|Any CPU
+
 		{8EBCCE47-AAA8-4CCE-8A03-5379070E7A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8EBCCE47-AAA8-4CCE-8A03-5379070E7A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EBCCE47-AAA8-4CCE-8A03-5379070E7A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -20,6 +30,7 @@ Global
 		{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}.Release|Any CPU.Build.0 = Release|Any CPU
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
