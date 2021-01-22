@@ -62,6 +62,6 @@ namespace Kovaleva.HomeWork_6
         //public void PrintBalance()
         //{ Console.WriteLine($"Текущий баланс: {CurrentCard.Balance}"); }
 
-        public Predicate<decimal> operation;
+        //public Predicate<decimal> operation;
     }
 }
