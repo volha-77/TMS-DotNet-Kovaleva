@@ -11,10 +11,10 @@ namespace Kovaleva.HomeWork_6
         public decimal Balance { get; set; }
         public string OwnerName { get; set; }
 
-        public Card(long cardNumber, int pin, string ownerName, decimal balance = 0)
+        public Card(long cardNumber, int pin, string ownerName, decimal balance = 0):this(cardNumber, pin)
         {
-            CardNumber = cardNumber;
-            Pin = pin;
+            //CardNumber = cardNumber;
+            //Pin = pin;
             OwnerName = ownerName;
             Balance = balance;
         }
