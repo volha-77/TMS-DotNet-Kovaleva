@@ -33,6 +33,6 @@ public Cage(int number, AnimalBase animal)
         { }
 
         public void PrintCageInfo()
-        { Console.WriteLine($"#{_number}:{Animal.AnimalName()}"); }
+        { Console.WriteLine($"#{_number}:{Animal.Name}"); }
     }
 }

@@ -7,10 +7,10 @@ namespace Kovaleva.HomeWork_5
         /// <summary>
         /// название животного
         /// </summary>
-        internal static string Name;
+        public string Name { get; protected set; }
 
-        public string AnimalName()
-        { return Name; }
+        //public virtual string AnimalName()
+        //{ return Name; }
         //  public string Name;
         /// <summary>
         /// вес

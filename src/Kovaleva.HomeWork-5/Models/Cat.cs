@@ -11,7 +11,7 @@ namespace Kovaleva.HomeWork_5
         /// <summary>
         /// статический конструктор
         /// </summary>
-        static Cat()
+        public Cat()
         { Name = "Cat"; }
 
         //public Cat()
