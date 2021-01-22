@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kovaleva.HomeWork-2", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kovaleva.HomeWork-3", "src\Kovaleva.HomeWork-3\Kovaleva.HomeWork-3.csproj", "{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovaleva.HomeWork-6", "Kovaleva.HomeWork-6\Kovaleva.HomeWork-6.csproj", "{21BDB49F-1251-4D88-ABDE-741934E6914A}"
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kovaleva.HomeWork-5", "src\Kovaleva.HomeWork-5\Kovaleva.HomeWork-5.csproj", "{C33A7719-35A9-483E-A9AF-94A15A6451BF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kovaleva.HomeWork-4", "src\Kovaleva.HomeWork-4\Kovaleva.HomeWork-4.csproj", "{26D58A56-71D4-4D4A-AE3E-6DADCC97C281}"
@@ -25,6 +26,10 @@ Global
 		{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{871C7D94-6BE1-4C3A-87A8-5A9D386D1295}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BDB49F-1251-4D88-ABDE-741934E6914A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BDB49F-1251-4D88-ABDE-741934E6914A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BDB49F-1251-4D88-ABDE-741934E6914A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BDB49F-1251-4D88-ABDE-741934E6914A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C33A7719-35A9-483E-A9AF-94A15A6451BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C33A7719-35A9-483E-A9AF-94A15A6451BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C33A7719-35A9-483E-A9AF-94A15A6451BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
