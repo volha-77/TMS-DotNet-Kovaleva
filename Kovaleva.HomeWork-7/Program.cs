@@ -51,8 +51,8 @@ namespace TMS.FitnessTracker
 			int i = 1;
             foreach (var training in trainings)
             {
-				Console.WriteLine($"Training[{i}]: AveragePulse {training.AveragePulse}, Distance {training.Distance} Steps " +
-					$"{training.Steps} Duration {training.Duration} StartDate {training.StartDate}");
+				Console.WriteLine($"Training[{i}]: AveragePulse {training.AveragePulse}, Distance {training.Distance}, Steps " +
+					$"{training.Steps}, Duration {training.Duration}, StartDate {training.StartDate}");
 				i++;
             }
 		}
